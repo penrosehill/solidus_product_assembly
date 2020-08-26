@@ -9,7 +9,8 @@ module SolidusProductAssembly
                                           join_table: "spree_assemblies_parts",
                                           foreign_key: "assembly_id", association_foreign_key: "part_id"
 
-          has_many :assemblies_parts, class_name: "Spree::AssembliesPart",
+          has_many :assemblies_parts, -> { order(position: :asc) },
+                                      class_name: "Spree::AssembliesPart",
                                       foreign_key: "assembly_id"
 
           scope :individual_saled, -> { where(individual_sale: true) }
