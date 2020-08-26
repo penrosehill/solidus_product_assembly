@@ -10,7 +10,7 @@
   	</tr>
   </thead>
   <tbody>
-    <% parts.each do |part| %>
+    <% parts.each_with_index do |part, index| %>
       <tr id="<%= dom_id(part, :sel)%>">
         <td>
           <% if can? :update_positions, Spree::AssembliesPart %>
@@ -20,7 +20,7 @@
         <td><%= part.sku %></td>
         <td><%= part.product.name %></td>
         <td><%= variant_options part %></td>
-        <td><%= text_field_tag :count, @product.count_of(part) %></td>
+        <td><%= text_field_tag :count, @product.count_of(part), id: "count-#{index+1}" %></td>
   	    <td class="actions">
           <%= link_to_with_icon(
             'edit',
