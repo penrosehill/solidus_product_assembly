@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-branch = ENV.fetch('SOLIDUS_BRANCH', 'v2.10-penrose')
+branch = ENV.fetch('SOLIDUS_BRANCH', 'staging')
 gem 'solidus', github: 'penrosehill/solidus', branch: branch
 
 # Needed to help Bundler figure out how to resolve dependencies,
