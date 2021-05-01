@@ -11,8 +11,8 @@ gem 'solidus', github: 'penrosehill/solidus', branch: branch
 # See https://github.com/bundler/bundler/issues/6677
 gem 'rails', '>0.a'
 
-# Provides basic authentication functionality for testing parts of your engine
-gem 'solidus_auth_devise'
+# Provides authentication and authorization services for use with Solidus by using Devise and CanCan. (https://github.com/solidusio/solidus_auth_devise)
+gem 'solidus_auth_devise', github: 'penrosehill/solidus_auth_devise', branch: 'master_updated_fixes'
 
 case ENV['DB']
 when 'mysql'
