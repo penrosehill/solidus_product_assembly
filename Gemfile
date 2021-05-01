@@ -3,16 +3,15 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-branch = ENV.fetch('SOLIDUS_BRANCH', 'master')
-gem 'solidus', github: 'solidusio/solidus', branch: branch
+gem 'solidus', github: 'solidusio/solidus', tag: 'v2.10.0'
 
 # Needed to help Bundler figure out how to resolve dependencies,
 # otherwise it takes forever to resolve them.
 # See https://github.com/bundler/bundler/issues/6677
 gem 'rails', '>0.a'
 
-# Provides basic authentication functionality for testing parts of your engine
-gem 'solidus_auth_devise'
+# Provides authentication and authorization services for use with Solidus by using Devise and CanCan. (https://github.com/solidusio/solidus_auth_devise)
+gem 'solidus_auth_devise', github: 'penrosehill/solidus_auth_devise', branch: 'master_updated_fixes'
 
 case ENV['DB']
 when 'mysql'
